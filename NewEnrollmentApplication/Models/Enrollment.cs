@@ -18,5 +18,8 @@ namespace NewEnrollmentApplication.Models
         public virtual String AssignedCampus { get; set; }
         public virtual String EnrollmentSemester { get; set; }
         public virtual int EnrollmentYear { get; set; }
+
+        [InvalidChars]
+        public virtual String Notes { get; set; }
     }
 }
