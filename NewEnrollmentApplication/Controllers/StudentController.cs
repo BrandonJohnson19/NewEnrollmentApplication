@@ -14,6 +14,33 @@ namespace NewEnrollmentApplication.Controllers
     {
         private NewEnrollmentApplicationDB db = new NewEnrollmentApplicationDB();
 
+        public ActionResult StudentMonth()
+        {
+            var students = GetStudentMonth();
+            return PartialView("_StudentMonth", students);
+        }
+
+        private Student GetStudentMonth()
+        {
+            var students = db.Students
+                .OrderBy(a => System.Guid.NewGuid())
+                .First();
+            return students;
+        }
+
+        public ActionResult StudentSearch(string q)
+        {
+            var students = GetStudents(q);
+            return PartialView("_StudentSearch", students);
+        }
+
+        private List<Enrollment> GetStudents(string searchString)
+        {
+            return db.Enrollments
+                .Where(a => a.Student.LastName.Contains(searchString))
+                .ToList();
+        }
+
         // GET: Student
         public ActionResult Index()
         {

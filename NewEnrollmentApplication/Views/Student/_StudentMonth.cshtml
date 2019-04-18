@@ -1,0 +1,18 @@
+﻿@model NewEnrollmentApplication.Models.Student
+
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Student of the Month:  @Model.FirstName</h3>
+    </div>
+    <div class="panel-body">
+
+        <div id="student-details">
+            <p>
+                <em>Student:</em>
+                @Model.FirstName
+                @Model.LastName
+            </p>
+        </div>
+    </div>
+</div>

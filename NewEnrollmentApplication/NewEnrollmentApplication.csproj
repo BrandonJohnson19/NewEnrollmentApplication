@@ -167,6 +167,10 @@
     <Compile Include="Migrations\201904141808200_migration041419part2.Designer.cs">
       <DependentUpon>201904141808200_migration041419part2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904172218277_migration041719.cs" />
+    <Compile Include="Migrations\201904172218277_migration041719.Designer.cs">
+      <DependentUpon>201904172218277_migration041719.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollment.cs" />
@@ -192,6 +196,8 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -226,6 +232,11 @@
     <Content Include="Views\Course\Details.cshtml" />
     <Content Include="Views\Course\Edit.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Student\_StudentMonth.cshtml" />
+    <Content Include="Views\Enrollment\_StudentSearch.cshtml" />
+    <Content Include="Views\Student\_StudentSearch.cshtml" />
+    <Content Include="Views\Course\_CourseSearch.cshtml" />
+    <Content Include="Views\Enrollment\_CourseSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -264,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904141808200_migration041419part2.resx">
       <DependentUpon>201904141808200_migration041419part2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904172218277_migration041719.resx">
+      <DependentUpon>201904172218277_migration041719.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -6,6 +6,50 @@
 
 <h2>Index</h2>
 
+<div class="panel panel-default">
+    <div class="panel-heading">Student Search</div>
+    <div class="panel-body">
+        @using (Ajax.BeginForm("StudentSearch", "Student", new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET",
+            OnFailure = "searchFailed",
+            LoadingElementId = "ajax-loader",
+            UpdateTargetId = "searchresults"
+        }))
+        {
+            <input type="text" name="q" />
+            <input type="submit" value="search" />
+            <img id="ajax-loader"
+                 src="@Url.Content("http://www.bafcn.com/ajax-loader.gif")"
+                 style="display:none" />
+        }
+        <div id="searchresults"></div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Course Search</div>
+    <div class="panel-body">
+        @using (Ajax.BeginForm("CourseSearch", "Enrollment", new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET",
+            OnFailure = "searchFailed",
+            LoadingElementId = "ajax-loader",
+            UpdateTargetId = "searchresults2"
+        }))
+        {
+            <input type="text" name="q" />
+            <input type="submit" value="search" />
+            <img id="ajax-loader"
+                 src="@Url.Content("http://www.bafcn.com/ajax-loader.gif")"
+                 style="display:none" />
+        }
+        <div id="searchresults2"></div>
+    </div>
+</div>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -72,3 +116,8 @@
 }
 
 </table>
+
+@section Scripts
+{
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    }
